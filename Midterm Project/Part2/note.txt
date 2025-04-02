@@ -1,0 +1,39 @@
+wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-p6.conv.289 (487M)
+
+wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-csp-swish.conv.164 (202M)
+
+
+curl https://icanhazip.com/v4
+
+sudo cat /var/log/cloud-init-output.log
+
+python3 upload.py a.txt <ip>
+
+# cw install and test
+sudo yum install amazon-cloudwatch-agent -y
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/home/ec2-user/cw_config.json
+telnet monitoring.ap-northeast-1.amazonaws.com 443
+
+# download file from ec2
+scp -i myKey.pem ec2-user@23.22.134.73:/home/ec2-user/chord-part-2/test_upload.py ./
+
+刪除流程:
+砍CW alarm
+砍auto scaling group policy, auto scaling group
+
+
+
+### dm.py ###
+upload 時記錄檔案名稱、chord ip
+
+定期使用 find_successor(file_hash) 查看是否有新的 node 在中間
+
+if find_successor(file_hash) != 舊的 chord_ip:
+    # 代表有新的 node
+    新的 chord_ip = XXX
+    python3 download.py file_name 舊的chord_ip
+    python3 upload.py filea_name 新的chord_ip
+
+當 upload 大小超過 xMB，根據現有 node 數量切資料
+
+### lb_download.py ###

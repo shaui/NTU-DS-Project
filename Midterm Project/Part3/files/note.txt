@@ -1,0 +1,24 @@
+
+curl https://icanhazip.com/v4
+
+curl http://checkip.amazonaws.com (public)
+
+
+wget https://raw.githubusercontent.com/shaui/cfg/main/yolov4-tiny.conv.29 (19M)
+
+sudo cat /var/log/cloud-init-output.log
+
+migrate 和 replica 要加判斷式
+if "-part-" not in file_name and ".pkl" not in file_name and "lb_download" not in file_name:
+
+
+* * * * * python3 /home/ec2-user/replica.py >> /home/ec2-user/replica.txt 2>&1
+
+echo "* * * * * /usr/bin/python3 /home/ec2-user/migrate.py >> /home/ec2-user/migrate_log.txt 2>&1" > cronjob_migrate
+echo "* * * * * /usr/bin/python3 /home/ec2-user/replica.py >> /home/ec2-user/replica_log.txt 2>&1" > cronjob_replica
+
+/usr/bin/crontab /home/ec2-user/cronjob
+
+
+wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-csp-swish.conv.164
+

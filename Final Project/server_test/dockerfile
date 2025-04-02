@@ -1,0 +1,12 @@
+FROM python:3.10.7-slim
+
+ADD . /server_test
+WORKDIR /server_test
+
+
+ENV AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXX
+ENV AWS_ACCESS_KEY_ID=XXXXXXXXXXXX
+ENV AWS_SESSION_TOKEN=XXXXXXXXXXXX
+
+RUN pip3 install -r requirements.txt
+CMD python3 server.py
